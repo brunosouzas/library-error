@@ -1,0 +1,14 @@
+@startuml TracePoint
+
+object TracePoint  {
+  START,
+  BEFORE_TRANSFORM,
+  AFTER_TRANSFORM,
+  BEFORE_REQUEST,
+  AFTER_REQUEST,
+  FLOW,
+  END,
+  EXCEPTION
+}
+
+@enduml

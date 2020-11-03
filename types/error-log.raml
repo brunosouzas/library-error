@@ -1,0 +1,91 @@
+#%RAML 1.0 DataType
+
+type: object
+displayName: Error Datatype to log 
+properties:
+  correlationId: 
+    description: trackable Id
+    type: string
+
+  sourceSystem?: 
+    description: code used to identify the source system of the error (used type-system-code fragment)
+    type: !include exchange_modules/13ecf258-fb9f-4dee-b1d3-4626b6c69bc0/dataType-source-system/1.0.0/source-system.raml
+
+  errorCode?:
+    description: error code used to identify the problem in the source system
+    type: string
+
+  message?:
+    description: Message to be logged or Source system error message 
+    type: string
+
+  tracePoint?:
+    description: Current processing stag
+    type: !include tracePoint.raml
+
+  priority?: 
+    description: Logger priority
+    type: !include priority.raml
+
+  category?:
+    description: If not set, by default will log to the com.brunosouzas.log category
+    type: string
+
+  elapsed?:
+    description: Elapsed Time
+    type: integer
+
+  locationInfo?:
+    description: Indicate if location information should be logged
+    properties:
+      lineInFile?:
+        type: string
+
+      component?:
+        type: string
+
+      fileName?:
+        type: string
+
+      rootContainer?:
+        type: string
+
+  timestamp?: 
+    description: Error date time 
+    type: string
+
+  content?:
+    type: any
+
+  applicationName?:
+    description: Application Name
+    type: string
+
+  applicationVersion?:
+    description: Application Version
+    type: string
+
+  environment?:
+    description: Environment
+    type: string
+
+example:
+  correlationId: "99f2b5e0-178d-11eb-bdd4-88e9fe7dffb0"
+  sourceSystem: "General"
+  errorCode: "ZSD001"
+  message: "Required customerId field"
+  tracePoint: "EXCEPTION"
+  priority: "ERROR"
+  category: "com.brunosouzas.log"
+  elapsed: 0
+  locationInfo:
+    lineInFile: "66"
+    component: "json-logger:logger"
+    fileName: "api.xml"
+    rootContainer: "test-Flow"
+  timestamp: "2020-10-26T13:17:30.686Z"
+  content:
+    payload: "{\"id\":\"12345\",\"name\":\"EAI\"}"
+  applicationName: "log-SAPI"
+  applicationVersion: "1.0.0"
+  environment: "dev"

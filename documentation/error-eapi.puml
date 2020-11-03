@@ -1,0 +1,8 @@
+@startuml ErrorEAPI
+
+map "Error-EAPI" as ErrorEAPI  {
+  message => string
+  detail => string
+}
+
+@enduml

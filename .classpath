@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="MAVEN_DEP_LIB/13ecf258-fb9f-4dee-b1d3-4626b6c69bc0/dataType-source-system/1.0.0/zip/raml-fragment"/>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="output" path=".target"/>
+</classpath>

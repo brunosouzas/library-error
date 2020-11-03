@@ -1,0 +1,35 @@
+@startuml error-log
+
+!include https://raw.githubusercontent.com/brunosouzas/library-error-doc/main/priority.puml
+!include https://raw.githubusercontent.com/brunosouzas/library-error-doc/main/tracePoint.puml
+!include https://raw.githubusercontent.com/brunosouzas/dataType-source-system-doc/main/sourceSystem.puml
+
+map LocationInfo {
+  lineInFile => string
+  component => string
+  fileName => string
+  rootContainer => string
+}
+
+map Content {
+  payload => string
+}
+
+map "Error-Log" as ErrorLog  {
+  correlationId => string
+  sourceSystem *--> SourceSystem
+  errorCode => string
+  message => string
+  tracePoint *-> TracePoint
+  priority *---> Priority
+  category => string
+  elapsed => integer
+  locationInfo *---> LocationInfo
+  timestamp => string
+  content *--> Content
+  applicationName => string
+  applicationVersion => string
+  environment => string
+}
+
+@enduml

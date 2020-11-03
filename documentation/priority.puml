@@ -1,0 +1,11 @@
+@startuml Priority
+
+object Priority {
+  DEBUG,
+  TRACE,
+  INFO,
+  WARN,
+  ERROR
+}
+
+@enduml

@@ -1,0 +1,16 @@
+#%RAML 1.0 DataType
+
+type: object
+displayName: Error Datatype to Experience API
+properties:
+  message: 
+    description: Error Message to API consumer
+    type: string
+    
+  detail:
+    description: Description of information about the error or how to resolve the error.
+    type: string
+
+example:
+  message: "Something went very wrong. Please try again."
+  detail: "Incoming request to the API is not valid. Please try again"
